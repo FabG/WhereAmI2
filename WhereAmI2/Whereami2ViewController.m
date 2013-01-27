@@ -67,4 +67,18 @@
     NSLog(@"Could not find location: %@", error);
 }
 
+// Implement delegate method of mapview when userlocation is found
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    NSLog(@"MKMapview: method sent back to ViewController delegate");
+    NSLog(@"MKMapview:User location found");
+    
+    // Now need to zoom in with a 25mx250m Region around the center point
+    // userLocation which we will convert to CLLocationCoordinate2D
+    CLLocationCoordinate2D loc = [userLocation coordinate];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(loc, 250, 250);
+    [worldView setRegion:region animated:YES];
+          
+}
+
 @end
