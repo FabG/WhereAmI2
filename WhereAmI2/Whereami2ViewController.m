@@ -34,8 +34,13 @@
     // regardless of how much time/power it takes
     [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
+    
     // Tell our manager to start looking for its location immediately
+    // not necessary now with the MKMapView instance that knows ow to find the location
     [locationManager startUpdatingLocation];
+    
+    // set the showsUserLocation property of an MKMapView to YES to show the user’s location on the map
+    [worldView setShowsUserLocation:YES];
     
 }
 

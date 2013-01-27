@@ -10,7 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface Whereami2ViewController : UIViewController <CLLocationManagerDelegate>
+// Conform to CLLocationManagerDelegate, MKMapViewDelegate
+@interface Whereami2ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 {
     // Model
     CLLocationManager *locationManager;
