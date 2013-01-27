@@ -18,6 +18,7 @@
 		1BB7D45816B5693E00ABFCFE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BB7D45716B5693E00ABFCFE /* Default-568h@2x.png */; };
 		1BB7D45B16B5693E00ABFCFE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BB7D45916B5693E00ABFCFE /* MainStoryboard.storyboard */; };
 		1BB7D45E16B5693E00ABFCFE /* Whereami2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB7D45D16B5693E00ABFCFE /* Whereami2ViewController.m */; };
+		1BB7D46516B5699F00ABFCFE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB7D46416B5699F00ABFCFE /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		1BB7D45A16B5693E00ABFCFE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1BB7D45C16B5693E00ABFCFE /* Whereami2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Whereami2ViewController.h; sourceTree = "<group>"; };
 		1BB7D45D16B5693E00ABFCFE /* Whereami2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Whereami2ViewController.m; sourceTree = "<group>"; };
+		1BB7D46416B5699F00ABFCFE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BB7D46516B5699F00ABFCFE /* CoreLocation.framework in Frameworks */,
 				1BB7D44216B5693E00ABFCFE /* UIKit.framework in Frameworks */,
 				1BB7D44416B5693E00ABFCFE /* Foundation.framework in Frameworks */,
 				1BB7D44616B5693E00ABFCFE /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +59,7 @@
 		1BB7D43216B5693E00ABFCFE = {
 			isa = PBXGroup;
 			children = (
+				1BB7D46416B5699F00ABFCFE /* CoreLocation.framework */,
 				1BB7D44716B5693E00ABFCFE /* WhereAmI2 */,
 				1BB7D44016B5693E00ABFCFE /* Frameworks */,
 				1BB7D43E16B5693E00ABFCFE /* Products */,
