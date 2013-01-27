@@ -10,8 +10,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-// Conform to CLLocationManagerDelegate, MKMapViewDelegate
-@interface Whereami2ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
+// Conform to CLLocationManagerDelegate, MKMapViewDelegate and UITextFieldDelegate
+@interface Whereami2ViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate>
 {
     // Model
     CLLocationManager *locationManager;
@@ -21,4 +21,10 @@
     IBOutlet UIActivityIndicatorView *activityIndicator;
     IBOutlet UITextField *locationTitleField;
 }
+
+// findLocation will be sent in textFieldShouldReturn
+- (void)findLocation;
+// foundLocation: will be sent in locationManager:didUpdateToLocation:fromLocation
+- (void)foundLocation:(CLLocation *)loc;
+
 @end

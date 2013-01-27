@@ -20,6 +20,7 @@
 		1BB7D45E16B5693E00ABFCFE /* Whereami2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB7D45D16B5693E00ABFCFE /* Whereami2ViewController.m */; };
 		1BB7D46516B5699F00ABFCFE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB7D46416B5699F00ABFCFE /* CoreLocation.framework */; };
 		1BB7D46B16B574CD00ABFCFE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB7D46A16B574CD00ABFCFE /* MapKit.framework */; };
+		1BB7D46E16B5801800ABFCFE /* MapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB7D46D16B5801800ABFCFE /* MapPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		1BB7D45D16B5693E00ABFCFE /* Whereami2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Whereami2ViewController.m; sourceTree = "<group>"; };
 		1BB7D46416B5699F00ABFCFE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1BB7D46A16B574CD00ABFCFE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1BB7D46C16B5801800ABFCFE /* MapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapPoint.h; sourceTree = "<group>"; };
+		1BB7D46D16B5801800ABFCFE /* MapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				1BB7D45C16B5693E00ABFCFE /* Whereami2ViewController.h */,
 				1BB7D45D16B5693E00ABFCFE /* Whereami2ViewController.m */,
 				1BB7D44816B5693E00ABFCFE /* Supporting Files */,
+				1BB7D46C16B5801800ABFCFE /* MapPoint.h */,
+				1BB7D46D16B5801800ABFCFE /* MapPoint.m */,
 			);
 			path = WhereAmI2;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				1BB7D44E16B5693E00ABFCFE /* main.m in Sources */,
 				1BB7D45216B5693E00ABFCFE /* Whereami2AppDelegate.m in Sources */,
 				1BB7D45E16B5693E00ABFCFE /* Whereami2ViewController.m in Sources */,
+				1BB7D46E16B5801800ABFCFE /* MapPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

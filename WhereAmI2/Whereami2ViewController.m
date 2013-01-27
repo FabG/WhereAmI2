@@ -7,6 +7,7 @@
 //
 
 #import "Whereami2ViewController.h"
+#import "MapPoint.h"
 
 @interface Whereami2ViewController ()
 
@@ -57,6 +58,20 @@
            fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"%@", newLocation);
+    
+    // How many seconds ago was this new location created?
+    NSTimeInterval t = [[newLocation timestamp] timeIntervalSinceNow];
+    
+    // CLLocationManagers will return the last found location of the
+    // device first, you don't want that data in this case.
+    // If this location was made more than 3 minutes ago, ignore it.
+    if (t < -180) {
+        // This is cached data, you don't want it, keep looking
+        return;
+    }
+    
+    [self foundLocation:newLocation];
+    
 }
 
 //  If the CLLocationManager fails to find its location, It sends a message to its delegate:
@@ -81,4 +96,48 @@
           
 }
 
+// Implement delegate method "textFieldShouldReturn:" to catch the user pressing
+// "Done" on the keyboard
+- (BOOL)textFieldShouldReturn:(UITextField *)txtField
+{
+    // This method isn't implemented yet - but will be soon.
+    [self findLocation];
+    
+    [txtField resignFirstResponder];
+    
+    return YES;
+}
+
+// The findLocation method will tell the locationManager to start looking for the
+// current location. It will also update the user interface so that the user can’t
+// re-enter text into the text field and will start the activity indicator spinning.
+- (void)findLocation
+{
+    [locationManager startUpdatingLocation];
+    [activityIndicator startAnimating];
+    [locationTitleField setHidden:YES];
+}
+
+// The foundLocation: method will create an instance of MapPoint and add it to the
+// worldView. It will also handle the map’ s zoom and reset the states of the UI
+// elements and the locationManager.
+- (void)foundLocation:(CLLocation *)loc
+{
+    CLLocationCoordinate2D coord = [loc coordinate];
+    
+    // Create an instance of MapPoint with the current data
+    MapPoint *mp = [[MapPoint alloc] initWithCoordinate:coord title:[locationTitleField text]];
+    
+    // Add it to the map view
+    [worldView addAnnotation:mp];
+    
+    // Zoom the region to this location
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 250, 250);
+    [worldView setRegion:region animated:YES];
+    
+    [locationTitleField setText:@""];
+    [activityIndicator stopAnimating];
+    [locationTitleField setHidden:NO];
+    [locationManager stopUpdatingLocation];
+}
 @end
