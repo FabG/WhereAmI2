@@ -57,7 +57,7 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
 {
-    NSLog(@"%@", newLocation);
+    NSLog(@"New location: %@", newLocation);
     
     // How many seconds ago was this new location created?
     NSTimeInterval t = [[newLocation timestamp] timeIntervalSinceNow];
