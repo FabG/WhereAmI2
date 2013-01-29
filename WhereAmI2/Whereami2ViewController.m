@@ -71,6 +71,7 @@
     }
     
     [self foundLocation:newLocation];
+    self.latlonLabel.text = [NSString stringWithFormat:@"%@", [newLocation description]];
     
 }
 
@@ -80,6 +81,7 @@
        didFailWithError:(NSError *)error
 {
     NSLog(@"Could not find location: %@", error);
+    self.latlonLabel.text = [NSString stringWithFormat:@"Can't find location"];
 }
 
 // Implement delegate method of mapview when userlocation is found

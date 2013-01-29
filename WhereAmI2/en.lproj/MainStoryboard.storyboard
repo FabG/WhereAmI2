@@ -28,6 +28,11 @@
                                 </connections>
                             </textField>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Wbb-tg-8jv"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lat, Lon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76o-WY-mBy">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -37,12 +42,16 @@
                             <constraint firstItem="XhV-eF-7AS" firstAttribute="centerX" secondItem="dXE-cB-bdc" secondAttribute="centerX" type="default" id="Ibz-fv-jVY"/>
                             <constraint firstItem="dXE-cB-bdc" firstAttribute="top" secondItem="3" secondAttribute="top" constant="46" id="KWx-mI-9rV"/>
                             <constraint firstItem="XhV-eF-7AS" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="LFb-j7-yy3"/>
+                            <constraint firstAttribute="trailing" secondItem="76o-WY-mBy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QOO-9c-VbU"/>
+                            <constraint firstAttribute="bottom" secondItem="76o-WY-mBy" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="X2b-eg-di1"/>
+                            <constraint firstItem="76o-WY-mBy" firstAttribute="leading" secondItem="dXE-cB-bdc" secondAttribute="leading" type="default" id="Zku-xC-wK1"/>
                             <constraint firstItem="Wbb-tg-8jv" firstAttribute="top" secondItem="3" secondAttribute="top" constant="95" id="cze-hS-6Tx"/>
                             <constraint firstItem="XhV-eF-7AS" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="pv4-np-YKy"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Wbb-tg-8jv" id="WnF-X1-aox"/>
+                        <outlet property="latlonLabel" destination="76o-WY-mBy" id="wGa-y4-fFv"/>
                         <outlet property="locationTitleField" destination="dXE-cB-bdc" id="5BC-D5-b6t"/>
                         <outlet property="worldView" destination="XhV-eF-7AS" id="jny-fH-DS5"/>
                     </connections>
