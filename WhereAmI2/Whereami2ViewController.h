@@ -22,10 +22,13 @@
     IBOutlet UITextField *locationTitleField;
 }
 @property (weak, nonatomic) IBOutlet UILabel *latlonLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *mapTypeControl;
 
 // findLocation will be sent in textFieldShouldReturn
 - (void)findLocation;
 // foundLocation: will be sent in locationManager:didUpdateToLocation:fromLocation
 - (void)foundLocation:(CLLocation *)loc;
+
+- (IBAction)changeMapType:(id)sender;
 
 @end

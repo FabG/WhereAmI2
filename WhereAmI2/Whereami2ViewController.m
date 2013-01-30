@@ -9,6 +9,10 @@
 #import "Whereami2ViewController.h"
 #import "MapPoint.h"
 
+// static variable to hold the preference name for the map type.
+// key format =  name of the application, the name of the preference and "PrefKey"
+NSString * const WhereamiMapTypePrefKey = @"WhereamiMapTypePrefKey";
+
 @interface Whereami2ViewController ()
 
 @end
@@ -19,6 +23,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    // User Preference read form disk
+    NSInteger mapTypeValue = [[NSUserDefaults standardUserDefaults]
+                              integerForKey:WhereamiMapTypePrefKey];
+    // Update the UI
+    
+    [self.mapTypeControl setSelectedSegmentIndex:mapTypeValue];
+    
+    // Update the map
+    [self changeMapType:self.mapTypeControl];
     
     // Create location manager object
     locationManager = [[CLLocationManager alloc] init];
@@ -142,4 +156,36 @@
     [locationTitleField setHidden:NO];
     [locationManager stopUpdatingLocation];
 }
+
+- (IBAction)changeMapType:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults]
+        setInteger:[sender selectedSegmentIndex]
+            forKey:WhereamiMapTypePrefKey];
+    
+    switch([sender selectedSegmentIndex])
+    {
+        case 0: {
+            [worldView setMapType:MKMapTypeStandard];
+        }break;
+        case 1: {
+            [worldView setMapType:MKMapTypeSatellite];
+        }break;
+        case 2: {
+            [worldView setMapType:MKMapTypeHybrid];
+        }break;
+    }
+
+}
+
+// override the class method initialize of NSObject to register defaults,
+// including setting the map type preference to 1
++ (void)initialize
+{
+    NSDictionary *defaults = [NSDictionary
+                              dictionaryWithObject:[NSNumber numberWithInt:1]
+                              forKey:WhereamiMapTypePrefKey];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+}
+
 @end
